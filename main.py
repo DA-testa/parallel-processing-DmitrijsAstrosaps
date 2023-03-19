@@ -17,7 +17,6 @@ def main():
     # first line - n and m
     # n - thread count 
     # m - job count
-    size= input()
     n = 0
     m = 0
     n,m = map(int, input().split())
