@@ -4,7 +4,11 @@ def parallel_processing(n, m, data):
     output = []
     # TODO: write the function for simulating parallel tasks, 
     # create the output pairs
-
+    Riba = [(i, 0) for i in range(n)]
+    for i in range(m):
+        Anch,Tarock=min(Riba,key=lambda x:x[1])
+        output.append((Anch,Tarock))
+        Riba[Anch]=(Anch,Tarock+data[i])
     return output
 
 def main():
@@ -13,17 +17,23 @@ def main():
     # first line - n and m
     # n - thread count 
     # m - job count
+    size= input()
     n = 0
     m = 0
-
+    n,m = map(int, input().split())
     # second line - data 
-    # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job
-    data = []
+    # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job  
+    data = list(map(int, input().split()))
+
+   
+
 
     # TODO: create the function
     result = parallel_processing(n,m,data)
     
     # TODO: print out the results, each pair in it's own line
+    for Anch,Tarock in result:
+        print(Anch, Tarock)
 
 
 
